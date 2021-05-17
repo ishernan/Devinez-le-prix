@@ -1,13 +1,15 @@
-html, body {
+/* html, body {
   background-color: #232020;
   min-width: 500px;
+} */
+body {
+  background-image: url('/numbers.jpg');
 }
 
-header {
-  color: #ff7315;
-  text-align: center;
-  font-size: 3em;
+.margin {
+  margin-top: 220px;
 }
+
 
 #instructions {
   color: white;

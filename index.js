@@ -1,11 +1,12 @@
 const numero  = document.querySelector('#prix');
 const form  = document.querySelector('#formulaire');
 const error = document.querySelector('small');
+const instruction = document.querySelector('#instructions');
 
-let nombreDepart = Math.floor(Math.random() * 101); 
+let nombreDepart = Math.floor((Math.random() * 99) + 1 ); 
 console.log(nombreDepart)
 let coups = 0; //les essais
-let nombreChoisi; //pas besoin que les variables aient une valeur
+let nombreChoisi; //pas besoin que les variables aient une valeur au départ 
 
 function verifier(nombre) {
   let information = document.createElement('div'); //pour creer un element HTML
@@ -13,15 +14,15 @@ function verifier(nombre) {
     information.textContent = `#${coups} (${nombre}) C'est plus`;
     information.className = 'instruction plus';
     
-  } else if (nombre < nombreDepart) {
-    information.textContent = `#${coups} (${nombre}) C'est plus`;
+  } else if (nombre > nombreDepart) {
+    information.textContent = `#${coups} (${nombre}) C'est moins`;
     information.className = 'instruction moins';
   } else {
-    information.textContent = "#" + coups + " ( " + nombre + " ) Félicitations vous avez trouvé le juste prix !";
+    information.textContent = `#${coups}  (${nombre}) Félicitations vous avez trouvé le bon numero ! `;
     information.className = "instruction fini";
-    number.disabled = true; //pour desactiver le form quand on trouve le numero 
+    numero.disabled = true; //pour desactiver le form quand on trouve le numero 
   }
-    document.querySelector('#instructions').prepend(information);
+    instruction.prepend(information);
 }
 
 numero.addEventListener('keyup', ()=> {

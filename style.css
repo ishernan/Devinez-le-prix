@@ -18,3 +18,14 @@ header {
   margin: 10px 0;
 }
 
+.plus {
+  background-color: #f67280;
+}
+
+.moins {
+  background-color: #ffa372;
+}
+
+.fini {
+  background-color : #0c9463;
+}

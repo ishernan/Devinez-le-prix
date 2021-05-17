@@ -18,6 +18,14 @@ header {
   margin: 10px 0;
 }
 
+.nonNombre {
+  background-color: red;
+}
+
+.isNombre {
+  background-color: silver;
+}
+
 .plus {
   background-color: #f67280;
 }

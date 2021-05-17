@@ -1,9 +1,6 @@
-/* html, body {
-  background-color: #232020;
-  min-width: 500px;
-} */
+
 body {
-  background-image: url('/numbers.jpg');
+  background-image: url('./numbers.jpg');
 }
 
 .margin {

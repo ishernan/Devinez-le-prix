@@ -1,7 +1,8 @@
-const numero  = document.querySelector('#prix');
-const form  = document.querySelector('#formulaire');
-const error = document.querySelector('small');
+const numero      = document.querySelector('#prix');
+const form        = document.querySelector('#formulaire');
+const error       = document.querySelector('small');
 const instruction = document.querySelector('#instructions');
+const rejouer     = document.querySelector('#rejouer');
 
 let nombreDepart = Math.floor((Math.random() * 99) + 1 ); 
 console.log(nombreDepart)
@@ -18,9 +19,10 @@ function verifier(nombre) {
     information.textContent = `#${coups} (${nombre}) C'est moins`;
     information.className = 'instruction moins';
   } else {
-    information.textContent = `#${coups}  (${nombre}) Félicitations vous avez trouvé le bon numero ! `;
+    information.textContent = `#${coups} (${nombre}) Félicitations vous avez trouvé le bon numero ! `;
     information.className = "instruction fini";
     numero.disabled = true; //pour desactiver le form quand on trouve le numero 
+    rejouer.classList.remove("d-none"); 
   }
     instruction.prepend(information);
 }
@@ -44,4 +46,8 @@ form.addEventListener('submit', (e) => {
     numero.value =''; //pour reinicier le formulaire 
     verifier(nombreChoisi); //pour afficher les messages lors de chaque essai
   }
-})
+});
+
+rejouer.addEventListener('click', ()=>{
+  location.reload();
+});

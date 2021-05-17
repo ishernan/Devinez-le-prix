@@ -19,11 +19,11 @@ header {
 }
 
 .nonNombre {
-  background-color: red;
+  border-color: red;
 }
 
 .isNombre {
-  background-color: silver;
+  border-color: silver;
 }
 
 .plus {

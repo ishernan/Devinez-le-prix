@@ -3,6 +3,8 @@ const form  = document.querySelector('#formulaire');
 const error = document.querySelector('small');
 
 let nombreDepart = Math.floor((Math.random() * 99) + 1); 
+let coups = 0; //les essais
+let nombreChoisi; //pas besoin que les variables aient une valeur
 
 prix.addEventListener('keyup', ()=> {
   if (isNaN(prix.value)) {
@@ -17,6 +19,10 @@ form.addEventListener('submit', (e) => {
   if (isNaN(prix.value) || prix.value == '') {
     prix.classList.add('nonNombre')
   } else {
+    coups ++;
     prix.classList.add('isNombre')
+    nombreChoisi = prix.value; 
+    prix.value =''; //pour reinicier le formulaire 
+    verifier(nombreChoisi); //pour afficher les messages lors de chaque essai
   }
 })
